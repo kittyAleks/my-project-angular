@@ -1,0 +1,33 @@
+body {
+  font: 18px Tahoma;
+}
+img {
+  margin: -4px 4px 0 0;
+  vertical-align: middle;
+}
+
+.list {
+  width: 500px;
+  float: left;
+  margin: 50px;
+}
+
+.parent_item {
+  height: 22px;
+  margin: 7px;
+  background-color: rgba(91,255,174,0.36);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.child_item {
+  height: 22px;
+  margin: 7px;
+  background-color: rgba(80, 173, 255, 0.25);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.tab {
+  margin-left: 100px;
+}
