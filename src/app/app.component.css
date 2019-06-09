@@ -2,14 +2,20 @@ body {
   font: 18px Tahoma;
 }
 img {
-  margin: -4px 4px 0 0;
   vertical-align: middle;
+  cursor: pointer;
+}
+.img_buttons {
+  float: left;
+  width: 22px;
+  height: 22px;
+  margin-right: 4px;
 }
 
 .list {
   width: 500px;
   float: left;
-  margin: 50px;
+  margin: 0 50px;
 }
 
 .parent_item {
@@ -30,4 +36,7 @@ img {
 
 .tab {
   margin-left: 100px;
+}
+.buttons_plus_minus {
+  width: 30px;
 }

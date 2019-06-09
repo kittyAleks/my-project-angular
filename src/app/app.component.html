@@ -2,15 +2,25 @@
 
       <!--    <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
           <button class="btn btn-default" (click)="addItem(text, price)">Добавить</button>  -->
-
+<div style="height: 400px; width: 1100px"
+     leaflet
+     [leafletOptions]="options"
+     (leafletMapReady)="onMapReady($event)">
+</div>
 <div class="list">
   <h1>DATA</h1>
   <div class="parent_container" *ngFor="let dataItem of data">
+
     <div class="parent_item">
-      <img src="../assets/theme/minus.png" (click)="dataItem.opened = false" *ngIf="dataItem.opened">
-      <img src="../assets/theme/plus.png" (click)="dataItem.opened = true" *ngIf="!dataItem.opened">
-      {{dataItem.id}}. {{dataItem.name}}
+      <div class="img_buttons">
+        <img src="../assets/theme/minus.png" (click)="dataItem.opened = false" *ngIf="dataItem.opened">
+        <img src="../assets/theme/plus.png" (click)="dataItem.opened = true" *ngIf="!dataItem.opened">
+      </div>
+      <div (click)="moveAllToActive(dataItem)">
+        {{dataItem.id}}. {{dataItem.name}}
+      </div>
     </div>
+
     <div *ngIf="dataItem.opened">
       <div class="child_item tab" *ngFor="let childItem of dataItem.children" (click)="moveToActive(dataItem, childItem)">
         {{childItem.name}}
@@ -21,7 +31,7 @@
 
 <div class="list">
   <h1>ACTIVE</h1>
-  <div class="child_item" *ngFor="let childItem of active">
+  <div class="child_item" *ngFor="let childItem of active" (click)="moveToData(childItem)">
     {{childItem.name}}
   </div><!--.child_item-->
 </div><!--.list-->
